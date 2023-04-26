@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        #submit {
+            width: 450px;
+            height: 50px;
+            color: white;
+            background-color: green;
+            border: black 2px solid;
+        }
+         input:hover {
+            cursor: pointer;
+        }
+        input {
+            border: black 2px solid;
+            width: 300px;
+            height: 25px;
+            outline: rgb(79, 240, 9) 1px solid;
+        }
+        input::placeholder {
+            color: rgb(101, 100, 100);
+            text-align: center;
+            margin: 5px;
+        }
+        select {
+            border: black 2px solid;
+            width: 40px;
+            height: 30px;
+        }
+        option {
+            text-align: center;
+        }
+        .main-container {
+            height: 441px;
+            width: 700px;
+            border: black 2px solid;
+            outline: rgb(79, 240, 9) 2px solid;
+            margin: 20%;
+        }
+        .img1 {
+            width: 180px;
+            height: 243px;
+        }
+    </style>
+</head>
+<body>
+<center><div class="main-container">
+    <h1>Calculator in JS by srocha-r</h1>
+<input id="number1" type="text" placeholder="Primer número">
+<select id="opciones" name="signo">
+<option id="sumar" value="sumar">+</option>
+<option id="restar" value="restar">-</option>
+<option id="multiplicar" value="multiplicar">*</option>
+<option id="dividir" value="dividir">/</option>
+<option id="resto" value="resto">%</option>
+</select>
+<input id ="number2" type="text" placeholder="Segundo número">
+<br>
+<br>
+<input id="submit" type="submit" value="Try me!">
+<br>
+<br>
+<img class="img1" src="https://i.ibb.co/SsYTmBH/how-to-draw-isaac-newton-featured-image-1200-removebg-preview.png">
+</div>
+</center>
+</body>
+<script>
+    const submit = document.getElementById("submit");
+    function calculadora() {
+        var z;
+        var x = parseInt(document.getElementById("number1").value);
+        var y = parseInt(document.getElementById("number2").value);
+        var lista = document.getElementById("opciones");
+        var selection = lista.selectedIndex;
+        var suma = document.getElementById("sumar");
+        var resta = document.getElementById("restar");
+        var multipicacion = document.getElementById("multiplicar");
+        var division = document.getElementById("dividir");
+        var rest = document.getElementById("resto");
+        if (selection == 0) {
+            z = parseFloat(x) + parseFloat(y);
+        }
+        if (selection == 1) {
+            z = parseFloat(x) - parseFloat(y)
+        }
+        if (selection == 2) {
+            z = parseFloat(x) * parseFloat(y)
+        }
+        if (selection == 3) {
+            z = parseFloat(x) / parseFloat(y)
+        }
+        if (selection == 4) {
+            z = parseFloat(x) % parseFloat(y)
+        }
+        if (division && rest == 0) {
+            alert("Its over 9000!");
+        }
+        if (x >= 0 && y >= 0){
+            alert(z);
+            console.log(z);
+        }
+        else {
+            alert("Error :(");
+        }
+    }
+    submit.onclick = function(e) {
+        calculadora();
+    }
+    setTimeout(alerta, 30000);
+    function alerta() {
+        alert("Please, use me...");
+    }
+</script>
+</body>
+</html>
